@@ -2,3 +2,5 @@
 tools/sqlfailover/build/
 tools/psqlcmd/build/
 cloud-service-broker
+terraform-exploration/*/.terraform/
+terraform-exploration/*/terraform.tfstate*

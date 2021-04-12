@@ -1,0 +1,10 @@
+resource "azurerm_mssql_database" "primary_db" {
+}
+
+resource "azurerm_mssql_database" "secondary_db" {
+    create_mode = "Secondary"
+    
+}
+
+resource "azurerm_sql_failover_group" "failover_group" {
+}
