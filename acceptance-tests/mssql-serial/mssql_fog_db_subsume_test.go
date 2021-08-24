@@ -3,17 +3,27 @@ package mssql_test
 import (
 	"acceptancetests/apps"
 	"acceptancetests/helpers"
+	"os/exec"
+	"time"
+
+	"github.com/onsi/gomega/gexec"
 
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
 )
 
 var _ = Describe("MSSQL Failover Group DB Subsume", func() {
-	It("can be accessed by an app", func() {
+	FIt("can be accessed by an app", func() {
 		By("creating a service instance using the MASB broker")
 		masbDBName := helpers.RandomName("db")
 		masbDBInstance := helpers.CreateService("azure-sqldb", "StandardS0", masbServerConfig(masbDBName))
 		defer masbDBInstance.Delete()
+
+		By("setting the DB size to 100MB")
+		command := exec.Command("az", "sql", "db", "update", "--name", masbDBName, "--server", metadata.PreProvisionedSQLServer, "--resource-group", metadata.ResourceGroup, "--max-size", "100MB")
+		session, err := gexec.Start(command, GinkgoWriter, GinkgoWriter)
+		Expect(err).NotTo(HaveOccurred())
+		Eventually(session, time.Minute).Should(gexec.Exit(0))
 
 		By("creating a failover group using the MASB broker")
 		fogName := helpers.RandomName("fog")
@@ -58,9 +68,6 @@ var _ = Describe("MSSQL Failover Group DB Subsume", func() {
 
 		By("purging the MASB FOG instance")
 		helpers.CF("purge-service-instance", "-f", masbFOGInstance.Name())
-
-		By("updating to another plan")
-		dbFogInstance.UpdateService("-p", "small")
 
 		By("binding the app to the CSB service instance")
 		binding := dbFogInstance.Bind(app)
