@@ -3,6 +3,10 @@ package mssql_test
 import (
 	"acceptancetests/apps"
 	"acceptancetests/helpers"
+	"os/exec"
+	"time"
+
+	"github.com/onsi/gomega/gexec"
 
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
@@ -14,6 +18,12 @@ var _ = Describe("MSSQL DB Subsume", func() {
 		masbDBName := helpers.RandomName("db")
 		masbServiceInstance := helpers.CreateService("azure-sqldb", "basic", masbServerConfig(masbDBName))
 		defer masbServiceInstance.Delete()
+
+		By("setting the DB size to 100MB")
+		command := exec.Command("az", "sql", "db", "update", "--name", masbDBName, "--server", metadata.PreProvisionedSQLServer, "--resource-group", metadata.ResourceGroup, "--max-size", "100MB")
+		session, err := gexec.Start(command, GinkgoWriter, GinkgoWriter)
+		Expect(err).NotTo(HaveOccurred())
+		Eventually(session, time.Minute).Should(gexec.Exit(0))
 
 		By("pushing the unstarted app")
 		app := helpers.AppPushUnstarted(apps.MSSQL)
