@@ -24,6 +24,8 @@ variable labels { type = map }
 variable sku_name { type = string }
 variable cores { type = number }
 variable max_storage_gb { type = number }
+variable min_capacity { type = number }
+variable auto_pause_delay { type = number }
 variable authorized_network {type = string}
 variable skip_provider_registration { type = bool }
 
@@ -85,14 +87,14 @@ resource "azurerm_sql_server" "azure_sql_db_server" {
   tags = var.labels
 }
 
-resource "azurerm_sql_database" "azure_sql_db" {
-  name                = var.db_name
-  resource_group_name = azurerm_sql_server.azure_sql_db_server.resource_group_name
-  location            = var.location
-  server_name         = azurerm_sql_server.azure_sql_db_server.name
-  requested_service_objective_name = local.sku_name
-  max_size_bytes      = var.max_storage_gb * 1024 * 1024 * 1024
-  tags = var.labels
+resource "azurerm_mssql_database" "azure_sql_db" {
+  name                        = var.db_name
+  server_id                   = azurerm_sql_server.azure_sql_db_server.id
+  sku_name                    = local.sku_name
+  max_size_gb                 = var.max_storage_gb
+  min_capacity                = var.min_capacity
+  auto_pause_delay_in_minutes = var.auto_pause_delay
+  tags                        = var.labels
 }
 
 resource "azurerm_sql_virtual_network_rule" "allow_subnet_id" {
@@ -113,18 +115,18 @@ resource "azurerm_sql_firewall_rule" "sql_firewall_rule" {
 }
 
 output sqldbResourceGroup {value = azurerm_sql_server.azure_sql_db_server.resource_group_name}
-output sqldbName {value = azurerm_sql_database.azure_sql_db.name}
+output sqldbName {value = azurerm_mssql_database.azure_sql_db.name}
 output sqlServerName {value = azurerm_sql_server.azure_sql_db_server.name}
 output sqlServerFullyQualifiedDomainName {value = azurerm_sql_server.azure_sql_db_server.fully_qualified_domain_name}
 output hostname {value = azurerm_sql_server.azure_sql_db_server.fully_qualified_domain_name}
 output port {value = 1433}
-output name {value = azurerm_sql_database.azure_sql_db.name}
+output name {value = azurerm_mssql_database.azure_sql_db.name}
 output username {value = random_string.username.result}
 output password {value = random_password.password.result}
 output status {value = format("created db %s (id: %s) on server %s (id: %s) URL: https://portal.azure.com/#@%s/resource%s",
-                               azurerm_sql_database.azure_sql_db.name,
-                               azurerm_sql_database.azure_sql_db.id,
+                               azurerm_mssql_database.azure_sql_db.name,
+                               azurerm_mssql_database.azure_sql_db.id,
                                azurerm_sql_server.azure_sql_db_server.name,
                                azurerm_sql_server.azure_sql_db_server.id,
                                var.azure_tenant_id,
-                               azurerm_sql_database.azure_sql_db.id)}
+                               azurerm_mssql_database.azure_sql_db.id)}
