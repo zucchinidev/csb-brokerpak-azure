@@ -3,7 +3,7 @@ module csbbrokerpakazure
 go 1.18
 
 require (
-	code.cloudfoundry.org/jsonry v1.1.3
+	code.cloudfoundry.org/jsonry v1.1.4
 	github.com/Pallinder/go-randomdata v1.2.0
 	github.com/cloudfoundry/cloud-service-broker v0.11.0
 	github.com/denisenkom/go-mssqldb v0.12.2
@@ -12,7 +12,7 @@ require (
 	github.com/onsi/gomega v1.20.0
 	github.com/pborman/uuid v1.2.1
 	golang.org/x/tools v0.1.11-0.20220513221640-090b14e8501f
-	honnef.co/go/tools v0.3.3
+	honnef.co/go/tools v0.4.0-0.dev
 )
 
 require (
