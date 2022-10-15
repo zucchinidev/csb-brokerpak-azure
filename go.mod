@@ -7,7 +7,7 @@ require (
 	github.com/Pallinder/go-randomdata v1.2.0
 	github.com/cloudfoundry/cloud-service-broker v0.12.0
 	github.com/denisenkom/go-mssqldb v0.12.2
-	github.com/hashicorp/terraform-plugin-sdk/v2 v2.23.0
+	github.com/hashicorp/terraform-plugin-sdk/v2 v2.24.0
 	github.com/onsi/ginkgo/v2 v2.2.0
 	github.com/onsi/gomega v1.21.1
 	github.com/pborman/uuid v1.2.1
@@ -59,7 +59,7 @@ require (
 	github.com/hashicorp/go-version v1.6.0 // indirect
 	github.com/hashicorp/hc-install v0.4.0 // indirect
 	github.com/hashicorp/hcl v1.0.0 // indirect
-	github.com/hashicorp/hcl/v2 v2.14.0 // indirect
+	github.com/hashicorp/hcl/v2 v2.14.1 // indirect
 	github.com/hashicorp/hil v0.0.0-20210521165536-27a72121fd40 // indirect
 	github.com/hashicorp/logutils v1.0.0 // indirect
 	github.com/hashicorp/terraform-exec v0.17.3 // indirect
