@@ -5,7 +5,7 @@ go 1.18
 require (
 	code.cloudfoundry.org/jsonry v1.1.4
 	github.com/Pallinder/go-randomdata v1.2.0
-	github.com/cloudfoundry/cloud-service-broker v0.13.3
+	github.com/cloudfoundry/cloud-service-broker v0.13.4
 	github.com/denisenkom/go-mssqldb v0.12.3
 	github.com/hashicorp/terraform-plugin-sdk/v2 v2.24.1
 	github.com/onsi/ginkgo/v2 v2.6.1
@@ -116,7 +116,7 @@ require (
 	github.com/xeipuuv/gojsonschema v1.2.0 // indirect
 	github.com/zclconf/go-cty v1.12.1 // indirect
 	go.opencensus.io v0.23.0 // indirect
-	golang.org/x/crypto v0.3.0 // indirect
+	golang.org/x/crypto v0.4.0 // indirect
 	golang.org/x/exp/typeparams v0.0.0-20220218215828-6cf2b201936e // indirect
 	golang.org/x/mod v0.7.0 // indirect
 	golang.org/x/net v0.4.0 // indirect
