@@ -12,7 +12,7 @@ require (
 	github.com/onsi/gomega v1.26.0
 	github.com/pborman/uuid v1.2.1
 	golang.org/x/tools v0.6.0
-	honnef.co/go/tools v0.4.0
+	honnef.co/go/tools v0.4.2
 )
 
 require (
