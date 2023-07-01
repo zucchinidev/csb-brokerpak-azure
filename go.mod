@@ -5,7 +5,7 @@ go 1.18
 require (
 	code.cloudfoundry.org/jsonry v1.1.4
 	github.com/Pallinder/go-randomdata v1.2.0
-	github.com/cloudfoundry/cloud-service-broker v0.19.0
+	github.com/cloudfoundry/cloud-service-broker v0.19.1
 	github.com/denisenkom/go-mssqldb v0.12.3
 	github.com/hashicorp/terraform-plugin-sdk/v2 v2.27.0
 	github.com/onsi/ginkgo/v2 v2.11.0
@@ -92,7 +92,7 @@ require (
 	github.com/mitchellh/reflectwalk v1.0.2 // indirect
 	github.com/oklog/run v1.0.0 // indirect
 	github.com/openzipkin/zipkin-go v0.4.1 // indirect
-	github.com/otiai10/copy v1.11.0 // indirect
+	github.com/otiai10/copy v1.12.0 // indirect
 	github.com/pelletier/go-toml/v2 v2.0.8 // indirect
 	github.com/pivotal-cf/brokerapi/v10 v10.0.0 // indirect
 	github.com/pkg/errors v0.9.1 // indirect
@@ -134,5 +134,5 @@ require (
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 	gorm.io/driver/mysql v1.5.1 // indirect
 	gorm.io/driver/sqlite v1.4.4 // indirect
-	gorm.io/gorm v1.25.1 // indirect
+	gorm.io/gorm v1.25.2 // indirect
 )
