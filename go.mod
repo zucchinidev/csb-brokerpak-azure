@@ -5,11 +5,11 @@ go 1.18
 require (
 	code.cloudfoundry.org/jsonry v1.1.4
 	github.com/Pallinder/go-randomdata v1.2.0
-	github.com/cloudfoundry/cloud-service-broker v0.19.2
+	github.com/cloudfoundry/cloud-service-broker v0.19.4
 	github.com/denisenkom/go-mssqldb v0.12.3
 	github.com/hashicorp/terraform-plugin-sdk/v2 v2.27.0
 	github.com/onsi/ginkgo/v2 v2.11.0
-	github.com/onsi/gomega v1.27.8
+	github.com/onsi/gomega v1.27.10
 	github.com/pborman/uuid v1.2.1
 	golang.org/x/tools v0.11.0
 	honnef.co/go/tools v0.4.3
@@ -54,7 +54,7 @@ require (
 	github.com/hashicorp/go-checkpoint v0.5.0 // indirect
 	github.com/hashicorp/go-cleanhttp v0.5.2 // indirect
 	github.com/hashicorp/go-cty v1.4.1-0.20200414143053-d3edf31b6320 // indirect
-	github.com/hashicorp/go-getter v1.7.1 // indirect
+	github.com/hashicorp/go-getter v1.7.2 // indirect
 	github.com/hashicorp/go-hclog v1.5.0 // indirect
 	github.com/hashicorp/go-multierror v1.1.1 // indirect
 	github.com/hashicorp/go-plugin v1.4.10 // indirect
