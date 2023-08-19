@@ -1,6 +1,7 @@
 module csbbrokerpakazure
 
 go 1.18
+toolchain go1.21.0
 
 require (
 	code.cloudfoundry.org/jsonry v1.1.4
@@ -12,7 +13,7 @@ require (
 	github.com/onsi/gomega v1.27.10
 	github.com/pborman/uuid v1.2.1
 	golang.org/x/tools v0.12.0
-	honnef.co/go/tools v0.4.3
+	honnef.co/go/tools v0.4.5
 )
 
 require (
