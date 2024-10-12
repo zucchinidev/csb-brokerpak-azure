@@ -11,7 +11,7 @@
   "dependencies": {
     "@azure/cosmos": "^4.1.1",
     "express": "^4.21.1",
-    "helmet": "^7.1.0",
+    "helmet": "^8.0.0",
     "jsonata": "^2.0.5",
     "vcap_services": "^0.7.1"
   },
