@@ -12,7 +12,7 @@
     "@azure/storage-blob": "^12.28.0",
     "express": "^5.1.0",
     "helmet": "^8.1.0",
-    "jsonata": "^2.0.6",
+    "jsonata": "^2.1.0",
     "vcap_services": "^0.7.1"
   },
   "devDependencies": {
