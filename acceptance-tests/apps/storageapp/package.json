@@ -9,7 +9,7 @@
     "test": "npx standard --fix"
   },
   "dependencies": {
-    "@azure/storage-blob": "^12.29.1",
+    "@azure/storage-blob": "^12.30.0",
     "express": "^5.2.1",
     "helmet": "^8.1.0",
     "jsonata": "^2.1.0",
