@@ -9,7 +9,7 @@
     "test": "npx standard --fix"
   },
   "dependencies": {
-    "@azure/cosmos": "^4.9.3",
+    "@azure/cosmos": "^4.10.0",
     "express": "^5.2.1",
     "helmet": "^8.3.0",
     "jsonata": "^2.2.2",
