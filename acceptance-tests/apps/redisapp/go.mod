@@ -3,7 +3,7 @@ module redisapp
 go 1.25.0
 
 require (
-	github.com/cloudfoundry-community/go-cfenv v1.24.1
+	github.com/cloudfoundry-community/go-cfenv v1.24.2
 	github.com/go-redis/redis/v8 v8.11.5
 	github.com/gorilla/mux v1.8.1
 	github.com/mitchellh/mapstructure v1.5.0
