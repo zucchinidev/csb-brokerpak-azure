@@ -1,9 +1,9 @@
 module mysqlapp
 
-go 1.25.0
+go 1.26.0
 
 require (
-	github.com/cloudfoundry-community/go-cfenv v1.24.4
+	github.com/cloudfoundry-community/go-cfenv v1.25.0
 	github.com/go-sql-driver/mysql v1.10.1
 	github.com/gorilla/mux v1.8.1
 	github.com/mitchellh/mapstructure v1.5.0
